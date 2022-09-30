@@ -47,5 +47,6 @@ namespace gyak3repoban
             }
 
         }
+        //delete
     }
 }
