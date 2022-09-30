@@ -70,6 +70,15 @@ namespace gyak3repoban {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Feltöltés.
+        /// </summary>
+        internal static string FileUpload {
+            get {
+                return ResourceManager.GetString("FileUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teljes név.
         /// </summary>
         internal static string FullName {

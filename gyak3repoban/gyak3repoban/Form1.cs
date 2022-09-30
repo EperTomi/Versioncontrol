@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace gyak3repoban
 {
@@ -32,6 +33,19 @@ namespace gyak3repoban
                 Fullname = textBox1.Text,
 
             };
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
+            StreamWriter sw = new StreamWriter("Users.txt");
+            foreach (var s in users)
+            {
+                sw.WriteLine(s.ID+" "+s.Fullname);
+            }
+
         }
     }
 }
