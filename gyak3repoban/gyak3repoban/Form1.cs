@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace gyak3repoban
 {
@@ -17,8 +18,7 @@ namespace gyak3repoban
         public Form1()
         {
             InitializeComponent();
-            label1.Text = Resource1.LastName; // label1
-            label2.Text = Resource1.FirstName; // label2
+            label1.Text = Resource1.FullName; // label1
             button1.Text = Resource1.Add; // button1
 
             listBox1.DataSource = users;
@@ -30,10 +30,22 @@ namespace gyak3repoban
         {
             var u = new User()
             {
-                LastName = textBox1.Text,
-                FirstName = textBox2.Text
+                Fullname = textBox1.Text,
 
             };
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() != DialogResult.OK)
+                return;
+            StreamWriter sw = new StreamWriter("Users.txt");
+            foreach (var s in users)
+            {
+                sw.WriteLine(s.ID+" "+s.Fullname);
+            }
+
         }
     }
 }
