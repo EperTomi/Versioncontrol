@@ -17,8 +17,7 @@ namespace gyak3repoban
         public Form1()
         {
             InitializeComponent();
-            label1.Text = Resource1.LastName; // label1
-            label2.Text = Resource1.FirstName; // label2
+            label1.Text = Resource1.FullName; // label1
             button1.Text = Resource1.Add; // button1
 
             listBox1.DataSource = users;
@@ -30,8 +29,7 @@ namespace gyak3repoban
         {
             var u = new User()
             {
-                LastName = textBox1.Text,
-                FirstName = textBox2.Text
+                Fullname = textBox1.Text,
 
             };
         }
