@@ -69,7 +69,10 @@ namespace _4gyak
                 headerRange.Interior.Color = Color.LightBlue;
                 headerRange.BorderAround2(excel.XlLineStyle.xlContinuous, excel.XlBorderWeight.xlThick);
 
-
+                int lastRowID = xlSheet.UsedRange.Rows.Count;
+                excel.Range bodyRange = xlSheet.get_Range(GetCell(2, 1), GetCell(lastRowID, headers.Length));
+                bodyRange.Interior.Color = Color.LightGreen;
+                bodyRange.BorderAround2(excel.XlLineStyle.xlContinuous, excel.XlBorderWeight.xlThick);
 
             }
 
