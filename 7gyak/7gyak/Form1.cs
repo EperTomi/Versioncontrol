@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace _7gyak
 {
@@ -16,7 +17,9 @@ namespace _7gyak
 
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
-        List<PortfolioItem> Portfolio = new List<PortfolioItem>(); 
+        List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+        private object streamwriter;
+
         public Form1()
         {
             InitializeComponent();
@@ -68,7 +71,17 @@ namespace _7gyak
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog()==DialogResult.OK)
+            {
+                StreamWriter sw = new StreamWriter("ticks.txt");
+                sw.WriteLine("Időszak" + " " + "Nyerseség");
+                for (int i = 0; i < Ticks.Count; i++)
+                {
 
+                }
+                sw.Close();
+            }
         }
     }
 }
