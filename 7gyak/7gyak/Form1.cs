@@ -71,6 +71,7 @@ namespace _7gyak
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             SaveFileDialog sfd = new SaveFileDialog();
             if (sfd.ShowDialog()==DialogResult.OK)
             {
@@ -78,7 +79,7 @@ namespace _7gyak
                 sw.WriteLine("Időszak" + " " + "Nyerseség");
                 for (int i = 0; i < Ticks.Count; i++)
                 {
-
+                   
                 }
                 sw.Close();
             }
